@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Order History</title>
+    <link rel="stylesheet" href="style5.css" />
+    <link rel="icon" href="mlogo.jpg">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      .history-box h4 {
+        margin: 0 0 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-size: 50px; text-align: center">Order History</h1>
+    <button
+      id="clearHistoryBtn"
+      style="
+        margin-bottom: 20px;
+        padding: 8px 12px;
+        background: #ff4d4d;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      "
+    >
+      Clear History
+    </button>
+    <div id="historyItems"></div>
+
+    <script>
+      const historyItemsDiv = document.getElementById("historyItems");
+      const history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+
+      if (history.length === 0) {
+        historyItemsDiv.innerHTML = "<p>No orders yet.</p>";
+      } else {
+        history.forEach((order) => {
+          let box = document.createElement("div");
+          box.classList.add("history-box");
+          box.innerHTML = `<h4>Order Date: ${order.date}</h4>`;
+
+          order.items.forEach((item) => {
+            box.innerHTML += `<p>${item.name} × ${item.quantity} — ₦${item.price}</p>`;
+          });
+
+          historyItemsDiv.appendChild(box);
+        });
+      }
+
+      // extra js
+      const clearBtn = document.getElementById("clearHistoryBtn");
+
+      clearBtn.addEventListener("click", () => {
+        if (confirm("Are you sure you want to delete all order history?")) {
+          localStorage.removeItem("orderHistory");
+          displayHistory();
+          document.getElementById("historyList").innerHTML =
+            "<p>No order history yet.</p>";
+        }
+      });
+
+      displayHistory();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,413 @@
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* search option */
+#searchInput {
+  width: 100%;
+  max-width: 600px;
+
+  /* Use box-sizing to ensure padding doesn't break the width */
+  box-sizing: border-box;
+
+  padding: 12px 20px;
+  font-size: 16px; /* Prevents iOS from auto-zooming on focus */
+
+  margin: 50px auto 100px auto; /* Centers the bar horizontally */
+  display: block;
+
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape often looks better for search */
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#searchInput:focus {
+  border-color: orange;
+  box-shadow: 0 0 8px rgba(255, 166, 0, 0.281);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  #searchInput {
+    margin-top: 30px; /* Less whitespace on mobile */
+    margin-bottom: 50px;
+    padding: 10px 15px; /* Slightly smaller padding */
+    font-size: 14px; /* Optional: smaller text for small screens */
+    width: 90%; /* Gives a little breathing room on the sides */
+  }
+}
+
+/* dailogue box */
+.close-btn {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.add-to-cart-btn:hover {
+  background: black;
+}
+
+/* MODAL BACKGROUND */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+
+/* MODAL CARD */
+.modal-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px; /* desktop size */
+  border-radius: 18px;
+  padding: 24px;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 15px 40px rgba(255, 166, 0, 0.281);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ANIMATION */
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* MODAL TITLE */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* FOOD INFO */
+.modal-content p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/* quantity box */
+.quantity-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.quantity-box button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ff6600;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* SELECT & INPUT */
+.modal-content select,
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid orange;
+  outline: none;
+  font-size: 14px;
+}
+
+/* CONFIRM BUTTON */
+#confirmOrder {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#confirmOrder:hover {
+  background: rgba(0, 0, 0, 0.603);
+}
+
+/* other box features */
+.quantity-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.quantity-box button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #ff6600;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* media queries for dialogue box */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+  .modal-content p {
+    font-size: 14px;
+  }
+  .quantity-box button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  #confirmOrder {
+    padding: 10px;
+    font-size: 15px;
+  }
+  select,
+  input {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* food container */
+.food-container {
+  display: grid;
+  /* 'auto-fit' usually looks better than 'auto-fill' for centering small amounts of items */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px; /* Reduced desktop gap for better balance */
+  padding: 20px;
+}
+
+.food-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px; /* Increased padding for better internal spacing */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.food-card img {
+  width: 100%;
+  height: 200px; /* Slightly taller for modern look */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.food-name {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet (Screens smaller than 1024px) */
+@media (max-width: 1024px) {
+  .food-container {
+    gap: 30px; /* Tighter gap for tablets */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Mobile (Screens smaller than 600px) */
+@media (max-width: 600px) {
+  .food-container {
+    /* On very small phones, cards will take up full width or 2 columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .food-card img {
+    height: 150px; /* Smaller images on mobile to save vertical space */
+  }
+}
+
+.food-card:hover {
+  transform: scale(1.03);
+}
+
+/* icon size */
+.icon {
+  font-size: 20px;
+}
+
+.search-bar {
+  justify-content: center;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+/* top navigation */
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.nav-btn:hover {
+  background: #e65c00;
+}
+
+.nav-btn {
+  padding: 8px 12px;
+  background: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.9s ease; /* smooth effect */
+}
+
+/* hover effect */
+.nav-btn:hover {
+  background: #e65c00;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .nav-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+
+/* icon size */
+.icon {
+  font-size: 20px;
+}
+
+.dark {
+  background: #121212;
+  color: white;
+}
+
+/* footer */
+footer {
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  /* Magic responsive line: */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the footer content */
+  text-align: left;
+}
+
+.footer-column h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #444;
+  display: inline-block;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Optional: Center text only on mobile */
+@media (max-width: 600px) {
+  .footer-container {
+    text-align: center;
+  }
+  .footer-column h3 {
+    display: block;
+  }
+}

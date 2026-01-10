@@ -1,0 +1,789 @@
+body {
+  background-color: rgba(128, 128, 128, 0.219);
+}
+
+/* navigation bar*/
+
+nav {
+  width: 100%; /* Spans full width to help centering */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Centers the menu pill */
+  padding: 20px 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  margin-top: 65px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row; /* Horizontal by default */
+  align-items: center;
+  gap: 10px; /* Space between links */
+  padding: 5px 20px;
+  margin: 0;
+  list-style: none;
+  background-color: #7cb342a1;
+  backdrop-filter: blur(10px); /* Modern touch: blurs background */
+  border-radius: 50px; /* Pill shape */
+}
+
+nav li a {
+  display: block;
+  color: white; /* Changed to white for better contrast on dark bg */
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  border-radius: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav li a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+/* Tablet (Screens under 768px) */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 5px;
+    padding: 5px 10px;
+  }
+
+  nav li a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile (Screens under 480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 0;
+  }
+
+  nav ul {
+    width: 90%; 
+    justify-content: space-around; /* Spread links evenly */
+    gap: 0;
+  }
+
+  nav li a {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+/* about section */
+
+/* Base Styles (Desktop) */
+.about-us {
+  text-align: center;
+  margin: 70px auto;
+  padding: 60px 40px; /* Reduced slightly for better balance */
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 1000px; /* Prevents it from getting too wide on huge monitors */
+  color: white;
+  box-sizing: border-box; /* Ensures padding doesn't break the width */
+}
+
+.about-us h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.about-us h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-weight: 400; /* Makes long text easier to read */
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet (Screens under 1024px) */
+@media (max-width: 1024px) {
+  .about-us {
+    width: 90%;
+    padding: 50px 30px;
+  }
+
+  .about-us h1 {
+    font-size: 40px;
+  }
+}
+
+/* Mobile (Screens under 480px) */
+@media (max-width: 480px) {
+  .about-us {
+    width: 95%; /* Use more screen real estate on mobile */
+    margin: 40px auto;
+    padding: 30px 20px; /* Significantly less padding so text isn't squished */
+  }
+
+  .about-us h1 {
+    font-size: 32px; /* Scales down so it doesn't wrap awkwardly */
+    margin-bottom: 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .about-us h3 {
+    font-size: 17px; /* Slightly smaller for better readability on small screens */
+    line-height: 1.5;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+}
+
+/* food templates banner */
+/* Food Templates Banner Container */
+.banner-us {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to stack on small screens */
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #7cb342;
+  padding: 40px 20px;
+  margin: 70px 20px 20px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* Image Styling */
+.banner-us img {
+  max-width: 100%; /* Ensures image never exceeds container width */
+  width: 500px; /* Ideal desktop size */
+  height: auto;
+  border-radius: 20px;
+  
+}
+
+/* Text Content Container */
+.textblock {
+  flex: 1;
+  min-width: 300px; /* Forces stack when screen gets too narrow */
+  max-width: 500px;
+  text-align: left; /* Default desktop alignment */
+}
+
+.banner-us h2 {
+  font-family: sans-serif;
+  font-size: 28px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.banner-us h1 {
+  font-size: 45px;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet (Screens under 1024px) */
+@media (max-width: 1024px) {
+  .banner-us {
+    gap: 20px;
+  }
+
+  .banner-us h1 {
+    font-size: 35px;
+  }
+}
+
+/* Mobile (Screens under 768px) */
+@media (max-width: 768px) {
+  .banner-us {
+    flex-direction: column; /* Stacks image on top of text */
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .textblock {
+    text-align: center; /* Center text for mobile */
+    margin-left: 0; /* Remove desktop indentation */
+    width: 100%;
+  }
+
+  .banner-us h1 {
+    font-size: 30px;
+  }
+
+  .banner-us h2 {
+    font-size: 22px;
+  }
+}
+
+/* meals section */
+/* --- Meals Section Wrapper --- */
+.meals-section {
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.meals-section h1 {
+  /* Use clamp for fluid typography: min 32px, preferred 8vw, max 60px */
+  font-size: clamp(32px, 8vw, 60px);
+  height: auto; /* Removed fixed height to prevent overlapping */
+  margin-bottom: 40px;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.meal-item h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.meal-item p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* --- The Grid Container --- */
+.meals-grid {
+  display: grid;
+  /* Automatically creates as many columns as fit, at least 250px wide */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* --- Individual Meal Cards --- */
+.meal-item {
+  background-color: #7cb342;
+  color: white;
+  padding: 25px 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.meal-item:hover {
+  transform: translateY(-5px);
+}
+
+.meal-item img {
+  border-radius: 10px;
+  width: 150px; /* Increased from 90px for better visibility */
+  height: 150px;
+  object-fit: cover; /* Prevents image distortion */
+  margin-bottom: 15px;
+}
+
+/* --- Button Refinement --- */
+.btn {
+  --color: white;
+  --color2: rgb(30, 21, 10);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 0.3px solid var(--color);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 15px; /* Slightly smaller for better fit in cards */
+  text-transform: uppercase;
+  color: var(--color);
+  margin-top: 15px;
+  width: fit-content;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet Adjustment */
+@media (max-width: 768px) {
+  .meals-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .meal-item {
+    padding: 15px;
+  }
+}
+
+/* Mobile Adjustment */
+@media (max-width: 480px) {
+  .meals-section {
+    padding: 20px 10px;
+  }
+
+  .meals-grid {
+    /* On very small screens, 1 column is usually best */
+    grid-template-columns: 1fr;
+  }
+
+  .meal-item img {
+    width: 120px;
+    height: 120px;
+  }
+}
+/* Order now button*/
+
+.btn {
+  --color: white;
+  --color2: rgb(30, 21, 10);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 0.3px solid var(--color);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: 0.5s ease-out;
+  background-color: var(--color);
+}
+
+.btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+  color: var(--color2);
+}
+
+.btn:active {
+  filter: brightness(0.7);
+  transform: scale(0.98);
+}
+
+/* demo table of our food */
+
+/* Search + Sorting */
+/* Container to help with layout spacing */
+.controls-container {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 10px;
+  padding: 10px;
+}
+
+#searchInput,
+#sortSelect {
+  padding: 10px;
+  border: 1px solid #cccccc65;
+  border-radius: 4px;
+  background-color: #cccccc65;
+  width: 100%; /* Full width on mobile */
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Tablet and Desktop adjustments */
+@media (min-width: 600px) {
+  .controls-container {
+    flex-direction: row; /* Side-by-side on larger screens */
+    align-items: center;
+  }
+
+  #searchInput {
+    flex: 2; /* Search bar takes more space */
+    max-width: 400px;
+  }
+
+  #sortSelect {
+    flex: 1; /* Select box stays smaller */
+    max-width: 200px;
+  }
+}
+
+/* Table Styling */
+#mealTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#mealTable th,
+#mealTable td {
+  padding: 12px;
+  border: 1px solid greenyellow;
+  text-align: left;
+}
+
+#mealTable th {
+  background: rgba(0, 0, 0, 0.596);
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mealTable tr:nth-child(even) {
+  background: #f9f9f977;
+}
+
+#mealTable tr:hover {
+  background: rgba(0, 0, 0, 0.596);
+}
+
+/* Responsive design*/
+@media (max-width: 600px) {
+  #mealTable th,
+  #mealTable td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #searchInput,
+  #sortSelect {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Contact Form */
+/* Contact Form Container */
+.contact-form-container {
+  background-color: rgba(0, 0, 0, 0.575);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  /* Use max-width for large screens and 90% for small screens */
+  width: 90%;
+  max-width: 400px;
+  /* Removed max-height to prevent content clipping on small screens */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Heading */
+.contact-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Form elements */
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  box-sizing: border-box; /* Critical for keeping inputs within the container */
+}
+
+/* Submit button */
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: greenyellow;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Removed margin-left: 10px; to keep it centered */
+}
+
+.contact-form button:hover {
+  background-color: black;
+}
+
+.divider {
+  background-color: rgba(0, 0, 0, 0.116);
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 30px;
+  border-width: 2000px;
+  border-color: white;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For Tablets (approx 768px and below) */
+@media (max-width: 768px) {
+  .contact-form-container {
+    margin: 30px auto;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .divider {
+    background-color: rgba(0, 0, 0, 0.116);
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 30px;
+    border-width: 2000px;
+    border-color: white;
+  }
+}
+
+/* For Mobile Phones (approx 480px and below) */
+@media (max-width: 480px) {
+  .contact-form-container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 95%; /* More space on very small screens */
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.5rem; /* Slightly smaller heading */
+  }
+}
+
+/* footer */
+
+footer {
+  background: #111;
+  color: orange;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.footer-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px; /* Adds spacing when items wrap */
+}
+
+.footer-section {
+  /* Changed from 30% to flex-basis for better flow */
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.footer-section p {
+  color: #bbb;
+  line-height: 1.6; /* Improves readability on mobile */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  .footer-section {
+    flex: 1 1 45%; /* Shows 2 sections per row on tablets */
+  }
+}
+
+/* Mobile Phones (600px and below) */
+@media (max-width: 600px) {
+  footer {
+    padding: 30px 0;
+    text-align: center; /* Center text for a professional mobile look */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Forces vertical stacking */
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-section:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* an imported css */
+/* From Uiverse.io by ahmed150up2 */
+.card {
+  display: flex;
+  height: 70px;
+  width: 270px;
+}
+
+.card svg {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.card .social-link1,
+.card .social-link2,
+.card .social-link3,
+.card .social-link4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.card svg {
+  transform: scale(1);
+}
+
+.card .social-link1:hover {
+  background-color: greenyellow;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link2:hover {
+  background-color: greenyellow;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link3:hover {
+  background-color: greenyellow;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link4:hover {
+  background-color: greenyellow;
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Back to top button */
+.to-top {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 20px;
+  background: greenyellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.to-top:hover {
+  background: white;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  color: #888;
+}
+
+/* end of footer */

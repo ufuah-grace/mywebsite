@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Varieties</title>
+    <link rel="icon" href="mlogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: white;
+       
+    }
+</style>
+<body>
+ 
+  
+  <h2 style="font-size: 8vw; font-family: 'Gill Sans', sans-serif; color: rgba(255, 166, 0, 0.795);">Our Menu</h2>
+<h2 style="font-size: 6vw; font-family: 'Gill Sans', sans-serif;">Balance: ₦10,000</h2>
+   
+   <!-- Top navigation -->
+  <div class="top-nav" >
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="cart.html" class="nav-btn">🛒 Cart</a>
+    <a href="history.html" class="nav-btn">📜 Order History</a>
+  </div>
+
+    </div>
+
+  <!-- Search Bar -->
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search for food..."
+    onkeyup="searchFood()"
+  >
+
+  <!-- Food Cards -->
+  <div class="food-container" id="foodContainer">
+
+    <div class="food-card">
+      <img src="meal 6.jpg" alt="Jollof Rice">
+      <h3 class="food-name">Jollof Rice</h3>
+      <p class="food-price" data-price="1500">₦1,500</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Jellof Rice"
+       data-price="1500">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal 6.jpg" alt="Fried Rice">
+      <h3 class="food-name">Fried Rice</h3>
+      <p class="food-price" data-price="1400">₦1,400</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Fried Rice"
+       data-price="1400">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal3.jpg" alt="Egusi Soup">
+      <h3 class="food-name">Egusi Soup</h3>
+      <p class="food-price" data-price="2000">₦2,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Egusi Soup"
+       data-price="2000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal1.jpg" alt="Pizza">
+      <h3 class="food-name">Pizza</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Pizza"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="samosa.jpeg" alt="">
+      <h3 class="food-name">Samosa</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Samosa"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="grilled fish.jpeg" alt="grilled fish">
+      <h3 class="food-name">Grilled fish</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Grilled fish"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal1.jpg" alt="Pancakes">
+      <h3 class="food-name">Pancakes</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Pancakes"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="spag.jpeg" alt="Spaghetti">
+      <h3 class="food-name">Spaghetti</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Spaghetti"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="chicken wing.jpeg" alt="Chicken Wings">
+      <h3 class="food-name">Chicken Wings</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Chicken Wings"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal1.jpg" alt="Meat Soup">
+      <h3 class="food-name">Meat Soup</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Meat Soup"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="shawarma.jpeg" alt="Shawarma">
+      <h3 class="food-name">Shawarma</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Shawarma"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="alfredo sauce.jpeg" alt="Alfredo sauce pasta">
+      <h3 class="food-name">Alfredo sauce pasta</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Alfredo sauce pasta"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="honey butter.jpeg" alt="Honey Butter Chicken">
+      <h3 class="food-name">Honey Butter Chicken</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Honey Butter Chicken"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal1.jpg" alt="Hasselback Potatoes">
+      <h3 class="food-name">Hasselback Potatoes</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Hasselback Potatoes"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="strawberry.jpeg" alt="Strawberry banana smoothie">
+      <h3 class="food-name">Strawberry banana smoothie</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Strawberry banana smoothie"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+
+    <div class="food-card">
+      <img src="meal1.jpg" alt="Oreos Milkshake">
+      <h3 class="food-name">Oreos Milkshake</h3>
+      <p class="food-price" data-price="3000">₦3,000</p>
+
+      <button class="add-to-cart-btn"
+       data-name="Oreos Milkshake"
+       data-price="3000">
+      Add to Cart
+    </button>
+    </div>
+</div>
+
+
+<!-- Cart Modal -->
+<div class="modal" id="cartModal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+
+    <h2>Add to Cart</h2>
+
+    <p><strong>Food:</strong> <span id="modalFoodName"></span></p>
+    <p><strong>Price:</strong> ₦<span id="modalFoodPrice">0</span></p>
+    <h3>Total: ₦<span id="cartTotal">0</span></h3>
+
+    <div class="quantity-box">
+  <button id="decreaseQty">−</button>
+  <span id="quantity">1</span>
+  <button id="increaseQty">+</button>
+</div>
+
+
+    <label>Select Payment Method:</label>
+    <select id="paymentMethod">
+      <option value="">-- Choose --</option>
+      <option style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: orangered;">UBA</option>
+      <option style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: orangered;">Opay</option>
+      <option style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: orangered;">Zenith</option>
+      <option style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: orangered;">Palmpay</option>
+      <option style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: orangered;">Other</option>
+    </select>
+
+    <input
+      type="text"
+      id="otherBank"
+      placeholder="Enter other bank name"
+      style="display:none; margin-top: 10px;"
+    />
+
+    <button id="confirmOrder">Add to Cart</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p> Your one-stop destination for delicious meals and exceptional service.
+          Explore our menu and get in touch with us for any inquiries or
+          reservations.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Order History</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Newsletter</h3>
+      <input type="email" placeholder="Enter your email">
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 MealMap
+  </div>
+</footer>
+
+<script>
+  const cartCount = document.getElementById("cartCount");
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+cartCount.textContent = cart.length;
+
+// ensuring it fit other screens
+const otherBank = document.getElementById("otherBank");
+document.getElementById("paymentMethod").onchange = () => {
+  otherBank.style.display = paymentMethod.value === "Other" ? "block" : "none";
+};
+
+
+</script>
+<script src="script1.js"></script>
+</body>
+</html>

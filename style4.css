@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: rgba(255, 166, 0, 0.384);
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("mlogo.jpg") no-repeat center center / cover;
+    color: #eee;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-position: top;}
+  }
+  
+h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#cartItems p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+#cartItems button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+#checkoutBtn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%; /* Full width on mobile */
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TOTAL PRICE */
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 600px) {
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+  #cartItems p { font-size: 14px; }
+  #cartItems button { padding: 4px 8px; font-size: 12px; }
+  #checkoutBtn { padding: 10px; font-size: 16px; }
+}

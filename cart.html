@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Cart</title>
+    <link rel="stylesheet" href="style4.css" />
+    <link rel="icon" href="mlogo.jpg">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        margin-bottom: 15px;
+      }
+      #cartItems p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px 0;
+      }
+      #cartItems button {
+        background: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 4px 8px;
+      }
+      #checkoutBtn {
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #ff6600;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-size: 50px; text-align: center">My Cart</h1>
+    <div id="cartItems"></div>
+
+    <h3>Total: ₦<span id="cartTotal">0</span></h3>
+    <button id="checkoutBtn">Checkout</button>
+
+    <script>
+      // Load cart from localStorage
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function displayCart() {
+        const cartItemsDiv = document.getElementById("cartItems");
+        const cartTotalSpan = document.getElementById("cartTotal");
+
+        cartItemsDiv.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          cartItemsDiv.innerHTML += `
+        <p>
+          ${item.name} × ${item.quantity} — ₦${item.price}
+          <button onclick="deleteItem(${index})">❌</button>
+        </p>
+      `;
+          total += Number(item.price);
+        });
+
+        cartTotalSpan.textContent = total;
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      function deleteItem(index) {
+        cart.splice(index, 1);
+        displayCart();
+      }
+
+      // Checkout button
+      document.getElementById("checkoutBtn").onclick = function () {
+        if (cart.length === 0) return alert("Your cart is empty!");
+
+        const history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+        history.push({
+          date: new Date().toLocaleString(),
+          items: cart,
+        });
+
+        localStorage.setItem("orderHistory", JSON.stringify(history));
+        localStorage.removeItem("cart"); // Clear cart after checkout
+        alert("Order placed successfully!");
+        window.location.href = "history.html"; // Redirect to history
+      };
+
+      // Initial display
+      displayCart();
+    </script>
+  </body>
+</html>
