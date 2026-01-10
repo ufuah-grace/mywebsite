@@ -6,21 +6,62 @@
     <link rel="stylesheet" href="style5.css" />
     <link rel="icon" href="mlogo.jpg">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-      h2 {
-        margin-bottom: 15px;
-      }
+      /* --- Base Styles: Mobile (Smallest Screens) --- */
+body {
+  font-family: Arial, sans-serif;
+  padding: 15px; /* Slightly reduced padding for more screen space */
+  line-height: 1.6; /* Improves readability on small screens */
+}
 
-      .history-box h4 {
-        margin: 0 0 8px 0;
-      }
+h1 {
+  font-size: 28px; /* Scales down significantly for mobile */
+  text-align: center;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  text-align: center; /* Centered headers usually look better on narrow screens */
+}
+
+.history-box h4 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+/* --- Tablet Styles (Screens 768px and up) --- */
+@media (min-width: 768px) {
+  body {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 26px;
+    text-align: left; /* Switch to left-aligned for larger layouts */
+  }
+}
+
+/* --- Desktop Styles (Screens 1024px and up) --- */
+@media (min-width: 1024px) {
+  body {
+    padding: 40px;
+    max-width: 1200px; /* Prevents text lines from getting too long/wide */
+    margin: 0 auto;    /* Centers the layout container */
+  }
+
+  h1 {
+    font-size: 50px; /* Your original large size */
+  }
+}
     </style>
   </head>
   <body>
-    <h1 style="font-size: 50px; text-align: center">Order History</h1>
+    <h1>Order History</h1>
     <button
       id="clearHistoryBtn"
       style="

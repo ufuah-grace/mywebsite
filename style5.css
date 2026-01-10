@@ -16,49 +16,82 @@ body {
   }
   
 
+/* --- Default: Mobile Styles (Phone) --- */
 h2 {
-  margin-bottom: 15px;
-  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 20px; /* Smaller for mobile */
   text-align: center;
 }
 
 .history-box {
   border: 1px solid orange;
-  padding: 12px;
+  padding: 15px; /* More padding for better readability on phones */
   margin-bottom: 15px;
   border-radius: 8px;
+  background-color: #fffaf0; /* Light background helps visibility */
 }
 
 .history-box h4 {
   margin: 0 0 8px 0;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .history-box p {
-  margin: 4px 0;
-  font-size: 16px;
+  margin: 6px 0;
+  font-size: 14px; /* Slightly smaller text for mobile */
   word-wrap: break-word;
+  line-height: 1.4;
 }
 
-/* clear btn */
+/* Clear Button - Mobile Optimized */
 #clearHistoryBtn {
+  display: block;
+  width: 100%; /* Full width button is easier to tap on phones */
   background: crimson;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 14px; /* Larger tap target */
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   transition: 0.2s ease;
+  font-size: 16px;
 }
 
-#clearHistoryBtn:hover {
-  background: darkred;
-  transform: scale(1.05);
+/* --- Tablet and Desktop Styles (600px and up) --- */
+@media (min-width: 600px) {
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .history-box {
+    padding: 12px;
+  }
+
+  .history-box p {
+    font-size: 16px;
+  }
+
+  #clearHistoryBtn {
+    width: auto; /* Return to natural size */
+    padding: 10px 18px;
+    display: inline-block;
+  }
+
+  #clearHistoryBtn:hover {
+    background: darkred;
+    transform: scale(1.05);
+  }
 }
 
-
+.history-container {
+  max-height: 400px;
+  overflow-y: auto; /* Adds a scrollbar if there are too many items */
+  padding-right: 5px;
+}
 /* --- MEDIA QUERIES --- */
 @media (max-width: 600px) {
   h2 { font-size: 20px; }

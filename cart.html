@@ -10,37 +10,85 @@
         font-family: Arial, sans-serif;
         padding: 20px;
       }
-      h2 {
-        margin-bottom: 15px;
-      }
-      #cartItems p {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 8px 0;
-      }
-      #cartItems button {
-        background: red;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 4px 8px;
-      }
-      #checkoutBtn {
-        margin-top: 20px;
-        padding: 10px 15px;
-        background: #ff6600;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-      }
+
+      /* --- Default: Mobile Styles (Screens smaller than 768px) --- */
+h1 {
+  font-size: 50px; /* Smaller for mobile screens */
+  text-align: center;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-align: center; /* Centered looks better on narrow screens */
+}
+
+#cartItems p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  padding: 10px;
+  background: #f9f9f9; /* Adds slight definition to each row */
+  border-radius: 5px;
+}
+
+#cartItems button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px; /* Increased size for easier finger tapping */
+  font-size: 14px;
+}
+
+#checkoutBtn {
+  display: block;
+  width: 100%; /* Full width button is easier to hit on mobile */
+  margin-top: 20px;
+  padding: 15px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* --- Desktop Styles (Screens 768px and wider) --- */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 50px; /* Your original large size */
+  }
+
+  h2 {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  #cartItems p {
+    margin: 8px 0;
+    padding: 5px 0;
+    background: transparent;
+  }
+
+  #cartItems button {
+    padding: 4px 8px;
+  }
+
+  #checkoutBtn {
+    width: auto; /* Return to natural width on desktop */
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+}
     </style>
   </head>
   <body>
-    <h1 style="font-size: 50px; text-align: center">My Cart</h1>
+    <h1>My Cart</h1>
     <div id="cartItems"></div>
 
     <h3>Total: ₦<span id="cartTotal">0</span></h3>

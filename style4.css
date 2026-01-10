@@ -65,11 +65,3 @@ h3 {
   margin-top: 35px;
 }
 
-/* --- MEDIA QUERIES --- */
-@media (max-width: 600px) {
-  h2 { font-size: 20px; }
-  h3 { font-size: 18px; }
-  #cartItems p { font-size: 14px; }
-  #cartItems button { padding: 4px 8px; font-size: 12px; }
-  #checkoutBtn { padding: 10px; font-size: 16px; }
-}
