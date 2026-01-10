@@ -78,8 +78,9 @@ nav li a:hover {
   }
 
   nav li a {
-    padding: 8px 10px;
-    font-size: 13px;
+    padding: 8px 0px;
+    font-size: 9px;
+    
   }
 }
 
@@ -238,11 +239,11 @@ nav li a:hover {
   }
 
   .banner-us h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .banner-us h2 {
-    font-size: 22px;
+    font-size: 11px;
   }
 }
 
@@ -309,26 +310,7 @@ nav li a:hover {
   margin-bottom: 15px;
 }
 
-/* --- Button Refinement --- */
-.btn {
-  --color: white;
-  --color2: rgb(30, 21, 10);
-  padding: 0.8em 1.75em;
-  background-color: transparent;
-  border-radius: 6px;
-  border: 0.3px solid var(--color);
-  transition: 0.5s;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  z-index: 1;
-  font-weight: 300;
-  font-size: 15px; /* Slightly smaller for better fit in cards */
-  text-transform: uppercase;
-  color: var(--color);
-  margin-top: 15px;
-  width: fit-content;
-}
+
 
 /* --- Responsive Adjustments --- */
 
