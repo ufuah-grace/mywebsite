@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: var(--bg-color);
+  
   color: var(--text-color);
 }
 
@@ -314,7 +314,7 @@ body {
 
 .nav-btn {
   padding: 8px 12px;
-  background: #ff6600;
+  background:black;
   color: white;
   text-decoration: none;
   border-radius: 8px;

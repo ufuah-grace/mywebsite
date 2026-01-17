@@ -15,10 +15,11 @@ body {
     background-position: top;}
   }
   
-h2 {
+h1 {
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 40px;
   text-align: center;
+  color: #eee;
 }
 
 #cartItems p {
@@ -32,7 +33,7 @@ h2 {
 }
 
 #cartItems button {
-  background: red;
+  background: white;
   color: white;
   border: none;
   border-radius: 5px;
@@ -45,8 +46,8 @@ h2 {
 #checkoutBtn {
   margin-top: 20px;
   padding: 12px 20px;
-  background: #ff6600;
-  color: white;
+  background: white;
+  color: black;
   border: none;
   border-radius: 8px;
   cursor: pointer;

@@ -17,15 +17,16 @@ body {
   
 
 /* --- Default: Mobile Styles (Phone) --- */
-h2 {
+h1 {
   margin-top: 20px;
   margin-bottom: 12px;
-  font-size: 20px; /* Smaller for mobile */
+  font-size: 50px; /* Smaller for mobile */
   text-align: center;
+  color: aliceblue;
 }
 
 .history-box {
-  border: 1px solid orange;
+
   padding: 15px; /* More padding for better readability on phones */
   margin-bottom: 15px;
   border-radius: 8px;
@@ -48,7 +49,7 @@ h2 {
 #clearHistoryBtn {
   display: block;
   width: 100%; /* Full width button is easier to tap on phones */
-  background: crimson;
+  background: white;
   color: white;
   border: none;
   padding: 14px; /* Larger tap target */
@@ -82,7 +83,7 @@ h2 {
   }
 
   #clearHistoryBtn:hover {
-    background: darkred;
+    background: white;
     transform: scale(1.05);
   }
 }

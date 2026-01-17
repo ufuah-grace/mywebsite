@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(128, 128, 128, 0.219);
+  background-color: white;
 }
 
 /* navigation bar*/
@@ -91,10 +91,10 @@ nav li a:hover {
   text-align: center;
   margin: 70px auto;
   padding: 60px 40px; /* Reduced slightly for better balance */
-  background-color: rgba(0, 0, 0, 0.39);
+  background-color: brown;
   border-radius: 10px;
-  width: 80%;
-  max-width: 1000px; /* Prevents it from getting too wide on huge monitors */
+  width: 95%;
+  /* Prevents it from getting too wide on huge monitors */
   color: white;
   box-sizing: border-box; /* Ensures padding doesn't break the width */
 }
@@ -135,7 +135,7 @@ nav li a:hover {
   }
 
   .about-us h1 {
-    font-size: 32px; /* Scales down so it doesn't wrap awkwardly */
+    font-size: 3vw; /* Scales down so it doesn't wrap awkwardly */
     margin-bottom: 15px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -162,6 +162,7 @@ nav li a:hover {
   margin: 70px 20px 20px 20px;
   border-radius: 15px;
   text-align: center;
+  height: 500px;
 }
 /* Image Styling */
 .banner-us img {
@@ -176,7 +177,8 @@ nav li a:hover {
 .textblock {
   flex: 1;
   min-width: 300px; /* Forces stack when screen gets too narrow */
-  max-width: 500px;
+  
+  width: 60px;
   text-align: left; /* Default desktop alignment */
 }
 
@@ -254,11 +256,12 @@ nav li a:hover {
   margin: 0 auto;
   max-width: 1200px;
   text-align: center;
+  
 }
 
 .meals-section h1 {
   /* Use clamp for fluid typography: min 32px, preferred 8vw, max 60px */
-  font-size: clamp(32px, 8vw, 60px);
+  font-size: 3vw;
   height: auto; /* Removed fixed height to prevent overlapping */
   margin-bottom: 40px;
   color: white;
@@ -344,9 +347,13 @@ nav li a:hover {
 }
 /* Order now button*/
 
+.but{
+  margin-top: 50px;
+}
+
 .btn {
-  --color: white;
-  --color2: rgb(30, 21, 10);
+  --color: brown;
+  --color2: white;
   padding: 0.8em 1.75em;
   background-color: transparent;
   border-radius: 6px;
@@ -415,7 +422,7 @@ nav li a:hover {
 #searchInput,
 #sortSelect {
   padding: 10px;
-  border: 1px solid #cccccc65;
+  border: 1px solid brown;
   border-radius: 4px;
   background-color: #cccccc65;
   width: 100%; /* Full width on mobile */
@@ -453,7 +460,7 @@ nav li a:hover {
 #mealTable th,
 #mealTable td {
   padding: 12px;
-  border: 1px solid greenyellow;
+  border: 1px solid brown;
   text-align: left;
 }
 
@@ -506,6 +513,7 @@ nav li a:hover {
   text-align: center;
   margin-bottom: 20px;
   color: white;
+  font-size: 3vw;
 }
 
 /* Form elements */
@@ -532,7 +540,7 @@ nav li a:hover {
   padding: 12px;
   border: none;
   border-radius: 5px;
-  background-color: greenyellow;
+  background-color: rgba(165, 42, 42, 0.637);
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -721,22 +729,22 @@ footer {
 }
 
 .card .social-link1:hover {
-  background-color: greenyellow;
+  background-color:  brown;
   animation: bounce_613 0.4s linear;
 }
 
 .card .social-link2:hover {
-  background-color: greenyellow;
+  background-color:  brown;
   animation: bounce_613 0.4s linear;
 }
 
 .card .social-link3:hover {
-  background-color: greenyellow;
+  background-color: brown;
   animation: bounce_613 0.4s linear;
 }
 
 .card .social-link4:hover {
-  background-color: greenyellow;
+background-color:  brown;
   animation: bounce_613 0.4s linear;
 }
 
@@ -763,7 +771,7 @@ footer {
   margin: 20px auto;
   display: block;
   padding: 10px 20px;
-  background: greenyellow;
+  background: rgba(165, 42, 42, 0.61);
   color: black;
   border: none;
   border-radius: 5px;
